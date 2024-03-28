@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Multiple Object Detection | TensorFlow.js</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Jason Mayes" />
+
+    <!-- Import the webpage's stylesheets -->
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  </head>
+  <body>
+    <h1>Machine Learning is Fun :)</h1>
+
+    <header class="note">
+      <h2>How To Use:</h2>
+      <p>
+        Please wait for the model to load before trying the demos below at which
+        point they will become visible when ready to use.
+      </p>
+    </header>
+
+    <h1>Demos</h1>
+
+    <hr />
+
+    <section id="demos" class="invisible">
+      <h2>Demo #1: Classifying Images</h2>
+      <p>
+        <em>Click on an image below</em> to try and recognize what is in the
+        image using the power of Machine Learning! Notice how in this demo we
+        not only know if the object is in the image, but also its position in
+        the image. Very useful.
+      </p>
+
+      <div class="classifyOnClick">
+        <img
+          src="https://cdn.glitch.com/74418d0b-3465-49a2-8c71-a721b7734473%2Fdoggo.jpg?v=1592266725716"
+          crossorigin="anonymous"
+          title="Click to get classification!" />
+      </div>
+      <div class="classifyOnClick">
+        <img
+          src="https://cdn.glitch.com/74418d0b-3465-49a2-8c71-a721b7734473%2Fcoupledog.jpg?v=1591311552891"
+          crossorigin="anonymous"
+          title="Click to get classification!" />
+      </div>
+      <div class="classifyOnClick">
+        <img
+          src="https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          crossorigin="anonymous"
+          title="Click to get classification!" />
+      </div>
+      <div class="classifyOnClick">
+        <img
+          src="https://images.unsplash.com/photo-1602114038142-864149820397?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8aHVtYW4lMjBhbmQlMjBhbmltYWx8ZW58MHx8MHx8fDA%3D"
+          crossorigin="anonymous"
+          title="Click to get classification!" />
+      </div>
+
+      <hr />
+
+      <h2>Demo #2: Upload Your Image</h2>
+      <p>
+        <em>Upload an image from your device</em> and click "Classify Image" to
+        see what objects are detected!
+      </p>
+
+      <div id="upload-container">
+        <label for="image-upload">Upload Image:</label>
+        <input type="file" id="image-upload" accept="image/*" />
+        <label for="classify-upload">Classify Image:</label>
+        <button id="classify-upload">Classify Image</button>
+        <div id="upload-preview"></div>
+        <div id="upload-results"></div>
+      </div>
+
+      <hr />
+
+      <h2>Demo #3: Webcam Continuous Classification</h2>
+      <p>
+        <em>Enable your webcam</em> and hold some objects up close to get a
+        real-time classification! You must be on
+        <a href="https://glitch.com/~tensorflow-js-object-detection"
+          >the https version of the website</a
+        >
+        for this to work. Note: This demo may not work on all devices.
+      </p>
+
+      <div id="liveView" class="videoView">
+        <button id="webcamButton">Enable Webcam</button>
+        <video id="webcam" autoplay></video>
+      </div>
+    </section>
+
+    <footer class="note">
+      <hr />
+      <h2>More Info</h2>
+      <p>
+        <a href="https://glitch.com/~tensorflow-js-object-detection"
+          >See the README.md or the project page for more information</a
+        >.
+      </p>
+      <p>
+        <a
+          rel="noopener"
+          href="https://twitter.com/weslenlakins"
+          target="_blank">
+          <i class="fab fa-twitter"></i> Twitter
+        </a>
+      </p>
+      <p>
+        <a
+          rel="noopener"
+          href="https://github.com/weslenlakins"
+          target="_blank">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </p>
+    </footer>
+
+    <!-- Import TensorFlow.js library -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.11.0/dist/tf.min.js"
+      type="text/javascript"></script>
+
+    <!-- Load the coco-ssd model to use to recognize things in images -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+
+    <!-- Import the page's JavaScript to do some stuff -->
+    <script type="module" src="/script.js"></script>
+  </body>
+</html>
